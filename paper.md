@@ -55,6 +55,8 @@ git push -u origin master
 
 Now every time you push to the repository Travis will go and build a PDF and HTML output page to the `gh-pages` branch of your repository. Your papers will be at `https://$USER.github.io/$REPO/` and `https://$USER.github.io/$REPO/paper.pdf` respectively.
 
+If you want to see the output on your machine just run `make` and check in `out/`.
+
 You can see the example output [here](https://hoverbear.github.io/acm-pandoc-paper/) and [here](https://hoverbear.github.io/acm-pandoc-paper/paper.pdf)
 
 # References

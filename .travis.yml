@@ -1,9 +1,9 @@
-# Travis's pandoc is ancient, fetch our own.
 sudo: false
 before_script:
-  - mkdir /home/travis/bin
-  - curl -L https://github.com/yihui/ubuntu-bin/releases/download/latest/pandoc.tar.gz | tar xvz -C /home/travis/bin
-  - export PATH="$PATH:/home/travis/bin"
+- mkdir /home/travis/bin
+- curl -L https://github.com/yihui/ubuntu-bin/releases/download/latest/pandoc.tar.gz
+  | tar xvz -C /home/travis/bin
+- export PATH="$PATH:/home/travis/bin"
 script: |
   [ $TRAVIS_BRANCH = master ] &&
   [ $TRAVIS_PULL_REQUEST = false ] &&
@@ -14,7 +14,7 @@ script: |
 addons:
   apt:
     packages:
-        - texlive-full
+    - texlive-full
 env:
   global:
-    secure: bHfqf8RFQwYGWTYaGo5j+LOl+wBfs13espkUNVC7mxhlh41dfrb5/S5Tq2e5vyQlnO0bVF65bFJefG+li2bwwvvQ06U+CIZp/IkK4fnXML7zlAfyHC5786IDPPB+lFRvs2YT5LKDjY7r7R2ZbdeItKcYvJGGkME57xGpU/dqt4/RDkAUBGVhKwo0vXDhh1+7D5C7YJBNp+LNUSs7hIsBAz+Ap/M/wyV82InTSvy2cqLFl7xl3HqdVPj2vrmVuTIUyn64qmEPE9dJawPZYxpYNA6CWWmdO7eRotQOvVbDb7+UqcwGy4cII9QCF1YNPpq8L2LALgj1umt3x2x/o/49k4SCMHAPQ6SfmbZJPL+nS4+v4uM6i/nOouKkvqX1j5ehSRLIQqGCm2YuCHv3Eb2Z4Cxj3AmJhrFhMQMm8u9S0E6VvIJ3cZAoE3ZabMeIZvMhZ2B6KCDChVfqPcCkb+jN0lSWhdUnHpqAK5XDtqOfs3mBDco5sFsKTkdQHy8ErNb0pK6a3nezjRCc2nWEyWDFVvkCYMxyngsiRD6xtnfIORbZGU4LlnAAUsfOzBW8wpprbXvxWX/7WyeO4VNFkO4f6HtUZj7Z3jFEGArVeQndttRbrwPOvVdREd+gT5SbyNEmxUwzveqvYIc/D1jUXHDXjes6RxfBBsce7x/5beWicao=
+    secure: FEJL53MpukneGKm6ly5/b3O1RsMH5uLs7V6Un2k4tuhXfarCFEqbBvzjnHnTHM0QC5XnbKrnc26XcPQ2kjQAYiR0C9EOUXDglWeFskwB4DshK1Q/wOgVNc4ODeH5NMwmGFrNgyB07hnZ0CE2iL4XbODh7ZKqVifHxyVdZNwCg3JtbW+CxzBlP7qepGp3n+Ao+GohrS0g676BwouT3zV9KijptHac0KiSjEMpRepm4ymBx10L3zTyz7K6F12Fu6DeTTs6tz+vUJ+OdVM+IOzXix4/DB7a5c8wQ3SSbK+iyTShoZ5rhBDb3dZA4/VD0jwFYoWtSucJsJf0iLKdOKFyB+pCc223aFQNlMBXy1FN2REaK+sq2zVv4BpBXDgBiuSxalseu5HOgjthPixLhTe3Us9kDJo+fK7axa6HL0d9/nczuyy15EFWwbyOq+QNz7MlorocE/b8ZkuMzDiLUi15GfmcmnlsKUCvRENPOsAFvMkxrg6TQRoiR8pzE4ebloB1LJBlRVSZW4bPuwfuRaulj5LhvgWRvQjo4NMdSGDm1BBZzjgSaj6FQjoFMc89fveydGkZOf//s5yjB6V6u1pxrUFwZv9bR6XrJyHL6GAfZ2QBzKUzn7UoNI43Xj8wxQj82kpwDz66MVJyodtud+F6cBzNPB2EGfNYfV/6Bfl3fKE=
