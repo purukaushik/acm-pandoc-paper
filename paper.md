@@ -1,22 +1,3 @@
----
-title: Publishing ACM Papers with Pandoc
-author:
-  - Andrew Hobden
-tags: [Publishing]
-abstract: |
-  We instruct users how to automatically generate open source ACM proceedings papers with `pandoc`, Github, and Travis CI.
-references:
-  - id: hoverbear
-    title: Hoverbear.org
-    author:
-        - given: Andrew
-          family: Hobden
-    type: webpage
-    URL: http://hoverbear.org
----
-
-This is a guide by Andrew Hobden. This demos a reference using the provided CSL: @hoverbear.
-
 # Prerequisites
 
 * A good idea.
