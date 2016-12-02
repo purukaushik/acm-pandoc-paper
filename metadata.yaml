@@ -1,0 +1,19 @@
+---
+title: The document title
+author:
+- name: Author One
+  affiliation: University of Somewhere
+  email: oauthor@somewhere.edu
+- name: Author Two
+  affiliation: University of Nowhere
+  email: tauthor@nowhere.edu
+- name: Author Three
+  affiliation: University of Nowhere
+  email: thauthor@nowhere.edu
+- name: Author Four
+  affiliation: University of Nowhere
+  email: fauthor@nowhere.edu
+tags: [Publishing]
+abstract: |
+ This is an attempt to solve the multiple author issue. This is related to issue #2.
+---
