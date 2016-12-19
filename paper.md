@@ -40,4 +40,5 @@ If you want to see the output on your machine just run `make` and check in `out/
 
 You can see the example output [here](https://hoverbear.github.io/acm-pandoc-paper/) and [here](https://hoverbear.github.io/acm-pandoc-paper/paper.pdf)
 
+Currently fixed the multiple author issue.
 # References
