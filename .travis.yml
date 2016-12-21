@@ -5,7 +5,6 @@ before_script:
   | tar xvz -C /home/travis/bin
 - export PATH="$PATH:/home/travis/bin"
 script: |
-  [ $TRAVIS_BRANCH = master ] &&
   [ $TRAVIS_PULL_REQUEST = false ] &&
   make &&
   pip install --user ghp-import &&
