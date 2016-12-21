@@ -4,8 +4,14 @@ before_script:
 - curl -L https://github.com/yihui/ubuntu-bin/releases/download/latest/pandoc.tar.gz
   | tar xvz -C /home/travis/bin
 - export PATH="$PATH:/home/travis/bin"
+- if ["$TRAVIS_PULL_REQUEST" != "false"]; then
+    TRAVIS_COMMIT_RANGE="FETCH_HEAD...$TRAVIS_BRANCH"
+  fi
+- git diff --name-only $TRAVIS_COMMIT_RANGE | grep 'README.md' || {
+        echo "No build. Only README.md changed"
+        exit
+        }
 script: |
-  [ $TRAVIS_BRANCH = master ] &&
   [ $TRAVIS_PULL_REQUEST = false ] &&
   make &&
   pip install --user ghp-import &&
