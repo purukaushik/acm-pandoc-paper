@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #0000ff; } /* Keyword */
+code > span.ch { color: #008080; } /* Char */
+code > span.st { color: #008080; } /* String */
+code > span.co { color: #008000; } /* Comment */
+code > span.ot { color: #ff4000; } /* Other */
+code > span.al { color: #ff0000; } /* Alert */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #008000; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #008080; } /* SpecialChar */
+code > span.vs { color: #008080; } /* VerbatimString */
+code > span.ss { color: #008080; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #0000ff; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #ff4000; } /* Preprocessor */
+code > span.do { color: #008000; } /* Documentation */
+code > span.an { color: #008000; } /* Annotation */
+code > span.cv { color: #008000; } /* CommentVar */
+code > span.at { } /* Attribute */
+code > span.in { color: #008000; } /* Information */
+  </style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#steps">Steps</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+<h1 id="prerequisites">Prerequisites</h1>
+<ul>
+<li>A good idea.</li>
+<li>Some references.</li>
+<li>Knowledge of how to use markdown.</li>
+<li>(Optional) <code>pandoc</code> installed locally along with <code>texlive-full</code>.</li>
+<li>A Github account.</li>
+</ul>
+<h1 id="steps">Steps</h1>
+<p>First, clone the preconfigured repo.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> clone git@github.com:purukaushik/acm-pandoc-paper.git</code></pre></div>
+<p>After, create a <a href="https://github.com/new">new Github repository for your paper</a>. Don’t add any initialization files. <em>Note:</em> Travis CI only offers free workers for public repos.</p>
+<p>Then you can visit your <a href="https://travis-ci.org/profile">Travis CI Profile</a> and switch the repository you created to ‘on’. <em>Hint:</em> You might need to hit “sync”.</p>
+<p>Since it would be positively outrageous to give Travis your Github password or private key, we’ll use what’s called an “access token”. To get one of these, go to your Github settings and you need to create a “Personal Access Token”, you only need to give it the “public_repo” permission. From there you can install the <a href="https://github.com/travis-ci/travis.rb#installation">Travis Gem</a> and safely encrypt it. Make sure to delete the existing key from <code>.travis.yml</code> first, that’s mine!</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">travis</span> encrypt GH_TOKEN=<span class="ot">$YOUR_TOKEN</span> --add env.global</code></pre></div>
+<p>Now, point the repo that was cloned to your newly created Github repository. The easiest way of doing this is:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">rm</span> -rf .git
+<span class="kw">git</span> init
+<span class="kw">//</span> Add your things and commit.
+<span class="kw">git</span> remote add origin <span class="ot">$YOUR_REPO</span>
+<span class="kw">git</span> push -u origin master</code></pre></div>
+<p>Now every time you push to the repository Travis will go and build a PDF and HTML output page to the <code>gh-pages</code> branch of your repository. Your papers will be at <code>https://$USER.github.io/$REPO/</code> and <code>https://$USER.github.io/$REPO/paper.pdf</code> respectively.</p>
+<p>If you want to see the output on your machine just run <code>make</code> and check in <code>out/</code>.</p>
+<p>You can see the example output <a href="https://purukaushik.github.io/acm-pandoc-paper/">here</a> and <a href="https://purukaushik.github.io/acm-pandoc-paper/paper.pdf">here</a></p>
+<h1 id="references" class="unnumbered">References</h1>
+<div id="refs" class="references">
+
+</div>
+</body>
+</html>
