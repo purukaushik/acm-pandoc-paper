@@ -11,7 +11,7 @@
 First, clone the preconfigured repo.
 
 ```bash
-git clone git@github.com:Hoverbear/acm-pandoc-paper.git
+git clone git@github.com:purukaushik/acm-pandoc-paper.git
 ```
 
 After, create a [new Github repository for your paper](https://github.com/new). Don't add any initialization files. *Note:* Travis CI only offers free workers for public repos.
@@ -38,7 +38,7 @@ Now every time you push to the repository Travis will go and build a PDF and HTM
 
 If you want to see the output on your machine just run `make` and check in `out/`.
 
-You can see the example output [here](https://hoverbear.github.io/acm-pandoc-paper/) and [here](https://hoverbear.github.io/acm-pandoc-paper/paper.pdf)
+You can see the example output [here](https://purukaushik.github.io/acm-pandoc-paper/) and [here](https://purukaushik.github.io/acm-pandoc-paper/paper.pdf)
 
 # References
 
